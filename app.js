@@ -13,12 +13,9 @@ app.use(express.static("public"));
 
 //Connect to db
 
-mongoose.connect(
-  "mongodb+srv://admin-craig:SgZwHJwcxTUBVi2H@cluster0.ioppil6.mongodb.net/todolistDB",
-  {
-    useNewUrlParser: true,
-  }
-);
+mongoose.connect("<dblink/database>", {
+  useNewUrlParser: true,
+});
 
 //Creating New Schema
 
