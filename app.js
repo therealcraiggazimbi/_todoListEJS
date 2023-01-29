@@ -13,9 +13,12 @@ app.use(express.static("public"));
 
 //Connect to db
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://admin-craig:SgZwHJwcxTUBVi2H@cluster0.ioppil6.mongodb.net/todolistDB",
+  {
+    useNewUrlParser: true,
+  }
+);
 
 //Creating New Schema
 
@@ -58,7 +61,7 @@ app.get("/", function (req, res) {
         if (err) return console.log("Huge erro");
         console.log("Items added");
       });
-      res, redirect("/");
+      res.redirect("/");
     } else {
       res.render("list", { listTitle: "Today", newListItems: results });
     }
